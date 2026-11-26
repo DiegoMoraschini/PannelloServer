@@ -1,6 +1,6 @@
 
 import './App.css'
-import { sistema, servers, avvisi } from './dati.js'
+import { sistema, servers, avvisi } from './dati-blackout.js'
 import { statoServer, contaPerStato, cpuMedia, piuLento, trovaServer } from './calcoli.js'
 import { Riepilogo } from './Riepilogo.jsx'
 import { Intestazione } from './Intestazione.jsx'
@@ -70,3 +70,9 @@ function App() {
 }
 
 export default App
+
+/*
+- Con sette server, la griglia mostrerà sette schede; la disposizione dipenderà dalle regole di layout CSS.
+- Con cinque server, mostrerà cinque schede; l'ultima posizione resterà vuota
+solo se il layout la prevede.
+*/
