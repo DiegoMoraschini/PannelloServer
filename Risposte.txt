@@ -1,0 +1,14 @@
+1)
+server.online dovrebbe rappresentare lo stato reale del server, non una scelta dell’interfaccia. 
+Il pulsante potrebbe inviare una richiesta di riavvio, ma non dovrebbe impostare da solo online = true:
+è il backend che aggiorna lo stato quando verifica che il server sia tornato operativo.
+A fine settimana 7 manca ancora il collegamento a un backend che esegua il riavvio e restituisca lo stato aggiornato;
+
+2)
+Se griglia e riepilogo usano la stessa funzione statoServer e gli stessi dati, i risultati devono coincidere:
+una scheda rossa significa che la funzione ha classificato quel server come critico, 
+e contaPerStato conta proprio quelle classificazioni. Se entrambe mostrano due critici, il conteggio è 2.
+
+3)
+Il badge riceve esattamente ciò che gli serve per presentare lo stato, senza conoscere il resto del server.
+Così è più semplice riutilizzarlo, testarlo e mantenerlo: non dipende dalla forma completa dell’oggetto né può accedere per errore a dati che non gli servono.
